@@ -1,4 +1,24 @@
 <h1>Articles du blog</h1>
 
 
-<%= @posts.inspect %>
+<% @posts.each do |post| %>
+
+  <h3><%= post.name %></h3>
+
+  <p><%= post.content %></p>
+
+  <p>
+
+    <a href="<%= post_path(post.id) %>" class = "btn btn-primary">Lire la suite</a>
+
+    <a href="<%= edit_post_path(post.id)%>" class = "btn btn-primary">Editer l'article</a>
+
+    <a href="<%= post_path(post.id)%>" class="btn btn-danger" data-confirm = "Êtes vous sûr ?" data-method ="DELETE">Supprimer</a>
+
+  </p>
+
+<% end %>
+
+<p>
+  <a href="<%= new_post_path %>" class="btn btn-success">Creer un nouvel article</a>
+</p>
