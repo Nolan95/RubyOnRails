@@ -7,6 +7,25 @@
 
   <p><%= post.content %></p>
 
+  <% if post.categorie %>
+
+    <p> <strong>Categorie : </strong><%= post.categorie.title %></p>
+
+  <% end %>
+
+  <% if !post.tags.empty? %>
+
+  <p>
+
+    Tags :
+
+    <%= post.tags.map(&:name).join(', ') %>
+
+  </p>
+
+  <% end %>
+
+
   <p>
 
     <a href="<%= post_path(post.id) %>" class = "btn btn-primary">Lire la suite</a>

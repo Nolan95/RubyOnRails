@@ -8,7 +8,7 @@ class PostsController < ApplicationController
       value: "John",
       expires: 1.month.from_now
     }
-    @posts = Post.offline.all
+    @posts = Post.includes(:categorie, :tags).all
 
     respond_to do |format|
       format.html {  }
