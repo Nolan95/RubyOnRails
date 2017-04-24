@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: Rorformation_production
-  username: Rorformation
-  password: <%= ENV['RORFORMATION_DATABASE_PASSWORD'] %>
+  database: tutorb
+  username: root
+  password: root

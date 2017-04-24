@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def home
-
+    ContactMailer.contact(Post.first).deliver_later
   end
 
 end
